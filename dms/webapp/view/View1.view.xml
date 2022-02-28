@@ -7,13 +7,12 @@
 >
     <Shell id="shell">
         <App id="app">
-            <pages>
+
 <Page id="page" title="{i18n>title}">
 <content>
-    <core:ComponentContainer id="_IDGenComponentContainer1" usage="documentTable" height="100%" async="false" manifest="true"/>
+    <core:ComponentContainer id="id1" usage="documentTable" height="100%" async="false" manifest="true"/>
 </content>
 </Page>
-            </pages>
         </App>
     </Shell>
 </mvc:View>

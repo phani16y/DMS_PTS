@@ -11,10 +11,15 @@ modules:
   - name: DMS_REUSE_UI-dest-srv
     group: destinations
     properties:
-      destinations: "[{\"name\": \"sdibackend\", \"url\": \"https://api-sdm-di.cfapps.sap.hana.ondemand.com\", \"forwardAuthToken\": true}]"
       forwardAuthToken: false
       name: ui5
       url: https://ui5.sap.com
+    parameters:
+     disk-quota: 256M
+     memory: 256M
+  - name: sdm-instance
+    properties:
+      destinations: "[{\"name\": \"sdibackend\", \"url\": \"https://api-sdm-di.cfapps.sap.hana.ondemand.com\", \"forwardAuthToken\": true}]"
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -55,6 +60,10 @@ resources:
     service: xsuaa
     service-name: DMS_REUSE_UI-xsuaa-service
     service-plan: application
+- name: sdm-instance
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: sdm
 - name: DMS_REUSE_UI_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
