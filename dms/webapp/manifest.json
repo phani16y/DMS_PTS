@@ -49,6 +49,7 @@
         "documentTable": {
           "name": "com.sap.ecm.reuse.documentTable",
           "settings": {
+            "destinationPath": "/comsapecmreuse.comsapecmreusedocumentTable/api",
             "repositoryId": "145f82b9-2bd6-4975-b163-754a93ab9901",
             "objectId": "ecf00390004ee75d649ec126"
             }
