@@ -64,6 +64,7 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     service: sdm
+    service-plan: standard
 - name: DMS_REUSE_UI_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
