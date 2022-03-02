@@ -17,7 +17,7 @@ modules:
     parameters:
      disk-quota: 256M
      memory: 256M
-  - name: sdm-instance
+  - name: dm_dev
     properties:
       destinations: "[{\"name\": \"sdibackend\", \"url\": \"https://api-sdm-di.cfapps.sap.hana.ondemand.com\", \"forwardAuthToken\": true}]"
   parameters:
@@ -60,7 +60,7 @@ resources:
     service: xsuaa
     service-name: DMS_REUSE_UI-xsuaa-service
     service-plan: application
-- name: sdm-instance
+- name: dm_dev
   type: org.cloudfoundry.managed-service
   parameters:
     service: sdm
