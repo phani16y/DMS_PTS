@@ -49,9 +49,7 @@
         "documentTable": {
           "name": "com.sap.ecm.reuse.documentTable",
           "settings": {
-            "destinationPath": "/comsapecmreuse.comsapecmreusedocumentTable/api",
-            "repositoryId": "145f82b9-2bd6-4975-b163-754a93ab9901",
-            "objectId": "ecf00390004ee75d649ec126"
+            "destinationPath": "/comsapecmreuse.comsapecmreusedocumentTable/api"            
             }
           }
         },
@@ -96,12 +94,24 @@
         "viewPath": "dms.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false
+        "bypassed": {
+            "target": [ "notFound" ]
+         }
       },
       "routes": [
         {
+            "pattern": "documents/v1/open/rep={repoId}&obj={objId}&vs={versionSeriesId}", 
+             "name": "DocView2",
+             "target":[ "DocView2" ]
+         },  
+        {
+           "pattern": "documents/v1/open/rep={repoId}&obj={objId}", 
+            "name": "DocView",
+            "target":[ "DocView" ]
+        },  
+        {
           "name": "RouteView1",
-          "pattern": "RouteView1",
+          "pattern": "",
           "target": [
             "TargetView1"
           ]
@@ -113,15 +123,37 @@
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "View1",
-          "viewName": "View1"
+          "viewName": "View1",
+          "viewLevel": 1
+        },
+        "DocView": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewLevel": 2,
+            "viewId": "View2",
+            "viewName": "View2"
+        },
+        "DocView2": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewLevel": 3,
+            "viewId": "View3",
+            "viewName": "View3"
+        },
+        "notFound": {
+           "viewName": "NotFound",
+           "viewId": "notFound",
+           "transition": "show"
         }
       }
     },
     "rootView": {
-      "viewName": "dms.view.View1",
+      "viewName": "dms.view.App",
       "type": "XML",
       "async": true,
-      "id": "View1"
+      "id": "app"
     }
   }
 }
